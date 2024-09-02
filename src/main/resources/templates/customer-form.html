@@ -10,17 +10,18 @@ color:red;
 }</style>
 </head>
 <body>
-<form  th:action="\customerform"  th:object="Customer" method="POST">
+<form  th:action="/customerform"  th:object="Customer" method="POST">
 
     <label>First Name</label>
     <input type="text" th:field="*{firstName}"/>
 <br>
     <label>Last Name</label>
     <input type="text" th:field="*{lastName}"/>
-    <span  class="error" th:if="${fields.hasErrors('lastName')}" th:errors="*{lastName}">
+    <span  class="error" th:if="${fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+    <br>
 
-
-</form>
+    <input type="submit" value="Submit"/>
+        </form>
 
 </body>
 </html>
