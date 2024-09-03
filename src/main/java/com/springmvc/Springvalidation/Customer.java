@@ -6,6 +6,15 @@ import jakarta.validation.constraints.Size;
 public class Customer {
 
     private String firstName;
+
+    public @NotNull(message = "is required") @Size(min = 1, message = "is required") String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(@NotNull(message = "is required") @Size(min = 1, message = "is required") String lastName) {
+        this.lastName = lastName;
+    }
+
     @NotNull(message = "is required")
     @Size(min=1,message="is required")
     private String lastName;
@@ -16,5 +25,8 @@ public class Customer {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+    public Customer(){
+
     }
 }
