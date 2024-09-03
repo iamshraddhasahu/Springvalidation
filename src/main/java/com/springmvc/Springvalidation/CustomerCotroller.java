@@ -17,7 +17,7 @@ public String showForm(Model model){
     return"customer-form";
 }
 @PostMapping("/customerform")
-    public String customerForm(@Valid @ModelAttribute("Customer") Customer thecustomer, BindingResult theBindingResult){
+    public String customerForm(@Valid @ModelAttribute("customer") Customer thecustomer, BindingResult theBindingResult){
 
     if(theBindingResult.hasErrors()){
         return"customer-form";

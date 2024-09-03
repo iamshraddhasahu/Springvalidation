@@ -10,7 +10,7 @@ color:red;
 }</style>
 </head>
 <body>
-<form  th:action="/customerform"  th:object="Customer" method="POST">
+<form  th:action="/customerform"  th:object="${customer}" method="POST">
 
     <label>First Name</label>
     <input type="text" th:field="*{firstName}"/>
