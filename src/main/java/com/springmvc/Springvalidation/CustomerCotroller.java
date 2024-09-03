@@ -1,9 +1,12 @@
 package com.springmvc.Springvalidation;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -14,11 +17,14 @@ public String showForm(Model model){
     return"customer-form";
 }
 @PostMapping("/customerform")
-    public String customerform(Model model){
+    public String customerForm(@Valid @ModelAttribute("Customer") Customer thecustomer, BindingResult theBindingResult){
 
-    return"customer-confirmation";
+    if(theBindingResult.hasErrors()){
+        return"customer-form";
+
+    }else{
+        return"customer-confirmation";
+    }
+
 }
-
-
-
 }
