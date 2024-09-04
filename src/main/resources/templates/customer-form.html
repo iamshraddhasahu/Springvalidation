@@ -13,15 +13,18 @@ color:red;
 <form th:action="@{/customerform}"
       th:object="${customer}"
       method="POST">
-
+    <br> <br>
     <label>First Name</label>
     <input type="text" th:field="*{firstName}"/>
-    <br>
+    <br> <br>
     <label>Last Name</label>
     <input type="text" th:field="*{lastName}"/>
     <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
-    <br>
-
+    <br> <br>
+    <label> Age</label>
+    <input type="text" th:field="*{age}"/>
+    <span th:if="${#fields.hasErrors('age')}" th:error="*{age}" class="error"></span>
+    <br><br>
     <input type="submit" value="Submit"/>
 </form>
 
