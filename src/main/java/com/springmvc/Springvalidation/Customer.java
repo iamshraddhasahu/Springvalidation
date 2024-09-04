@@ -14,21 +14,18 @@ public class Customer {
     private String lastName;
 
 
-    @NotNull(message = "age is required")
-    @Min(value = 18, message = "age must be 18 or greater than 18")
-    @Max(value = 50, message = "age must be less than or equal to 50")
-    public int getAge() {
+       public Integer getAge() {
         return age;
     }
 
-    public void setAge(@NotNull(message = "age is required") @Min(value = 18, message = "age must be 18 or greater than 18") @Max(value = 50, message = "age must be less than or equal to 50") int age) {
+    public void setAge(@NotNull(message = "age is required") @Min(value = 18, message = "age must be 18 or greater than 18") @Max(value = 50, message = "age must be less than or equal to 50") Integer age) {
         this.age = age;
     }
 
     @NotNull(message="age is required")
     @Min(value=18,message="age must be 18 or greater than 18")
     @Max(value=50, message ="age must be less than or equal to 50")
-    private int age;
+    private Integer age;
 
 
     public @NotNull(message = "is required") @Size(min = 1, message = "is required") String getLastName() {

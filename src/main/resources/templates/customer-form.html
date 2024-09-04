@@ -23,7 +23,7 @@ color:red;
     <br> <br>
     <label> Age</label>
     <input type="text" th:field="*{age}"/>
-    <span th:if="${#fields.hasErrors('age')}" th:error="*{age}" class="error"></span>
+    <span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
     <br><br>
     <input type="submit" value="Submit"/>
 </form>
