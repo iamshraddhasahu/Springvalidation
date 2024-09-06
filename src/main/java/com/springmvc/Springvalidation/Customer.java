@@ -9,6 +9,15 @@ public class Customer {
 
     private String firstName;
 
+    public Integer getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(Integer phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    private Integer phoneNumber;
     @NotNull(message = "is required")
     @Size(min=1,message="is required")
     private String lastName;
